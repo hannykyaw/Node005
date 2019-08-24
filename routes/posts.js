@@ -18,13 +18,14 @@ router.post('/postadd', function(req, res){
   post.save(function (err, rtn){
     if(err) throw err;
     console.log(rtn);
-    res.redirect('/posts/postlist');
+    res.redirect('/posts/post_list');
   });
 });
 
 router.get('/postlist', function(req,res) {
   Post.find({}).populate('author').exec(function (err, rtn){
     if(err) throw err;
+    console.log(rtn);
     res.render('posts/post_list', {posts: rtn});
   });
 });

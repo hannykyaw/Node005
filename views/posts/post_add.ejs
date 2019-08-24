@@ -32,8 +32,8 @@
             <label for="content">Content</label><br>
             <textarea name="content" rows="8" cols="80"></textarea><p>
             <label for="author">Author</label><br>
-            <select class="" name="author">
-              <% for(var i=0; i< users.length; i++){%>
+            <select class="" name="author" id="author">
+              <% for(var i=0; i< users.length; i++){ %>
                 <option value="<%= users[i]._id %>"><%= users[i].name %></option>
                 <%}%>
             </select>
